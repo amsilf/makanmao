@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Food/resources/pecel_lele.png" type="Texture" id=1]
+[ext_resource path="res://Food/Food.tscn" type="PackedScene" id=2]
+
+[node name="PecelLeleFood" instance=ExtResource( 2 )]
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PoolVector2Array( -15.783, -6.09717, -16.1552, 4.50856, -10.015, 11.0209, 4.31205, 12.5094, 14.7317, 5.06676, 16.4063, -2.37586, 4.49812, -10.1906, -8.15434, -10.7488 )

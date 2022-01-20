@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Food/UI.gd" type="Script" id=1]
+[ext_resource path="res://DefaultGameTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Font/ManaSpc.tres" type="DynamicFont" id=3]
+[ext_resource path="res://UI/PauseMenu.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.415686, 0.568627, 0.670588, 1 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.415686, 0.568627, 0.670588, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.415686, 0.568627, 0.670588, 1 )
+
+[sub_resource type="Theme" id=6]
+Button/styles/disabled = SubResource( 2 )
+Button/styles/focus = SubResource( 3 )
+Button/styles/hover = SubResource( 4 )
+Button/styles/normal = SubResource( 1 )
+Button/styles/pressed = SubResource( 5 )
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+Label/fonts/font = ExtResource( 3 )
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="PauseMenu" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresLabel" type="Label" parent="HBoxContainer"]
+margin_right = 187.0
+margin_bottom = 16.0
+theme = SubResource( 6 )
+text = "Calories count: 0	"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+margin_left = 191.0
+margin_right = 528.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeLabel" type="Label" parent="HBoxContainer"]
+margin_left = 532.0
+margin_right = 620.0
+margin_bottom = 16.0
+theme = ExtResource( 2 )
+text = "Time: 30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
